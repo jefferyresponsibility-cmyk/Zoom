@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Internal meeting access portal. Enter your meeting ID to continue.">
+  <meta name="theme-color" content="#f5f7fc">
+  <title>Join a meeting — Meeting Access</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="meeting.css">
+</head>
+<body class="page-join">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="masthead">
+    <div class="masthead-inner">
+      <a class="ma-brand" href="index.html" aria-label="Zoom — internal meeting access home">
+        <img class="ma-logo" src="zoom logo.png" alt="Zoom">
+        <span class="ma-brand-badge">Internal</span>
+      </a>
+
+      <nav class="masthead-nav" aria-label="Secondary">
+        <a href="index.html">Back to site</a>
+        <a class="masthead-cta" href="zoom logo.png" download target="_blank" rel="noopener noreferrer">
+          Get Zoom
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="join-main">
+    <div class="join-shell">
+      <aside class="join-aside" aria-labelledby="asideTitle">
+        <span class="aside-eyebrow">Internal meeting portal</span>
+        <h1 id="asideTitle">Join a meeting</h1>
+        <p class="aside-lede">
+          Enter the meeting ID your host shared with you. We’ll check the details
+          and take you to the next step.
+        </p>
+
+        <ul class="aside-points">
+          <li>
+            <span class="point-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="m5 12.5 4.2 4.2L19 6.8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            Works with any 9–11 digit meeting ID
+          </li>
+          <li>
+            <span class="point-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="m5 12.5 4.2 4.2L19 6.8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            Your name is only shared with the host
+          </li>
+          <li>
+            <span class="point-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="m5 12.5 4.2 4.2L19 6.8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            No account needed to continue
+          </li>
+        </ul>
+
+        <div class="aside-note">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 10.5V16M12 7.6v.1" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+          <p>Need help finding your meeting ID? Contact the IT service desk before joining.</p>
+        </div>
+      </aside>
+
+      <section class="join-card" aria-labelledby="formTitle">
+        <span class="step-pill">Step 1 of 2</span>
+        <h2 id="formTitle">Enter your meeting details</h2>
+        <p class="card-lede">You’ll be taken to the next step to finish joining.</p>
+
+        <form class="join-form" action="joining.html" method="get">
+          <div class="field">
+            <label for="meetingId">Meeting ID</label>
+            <div class="input-wrap">
+              <svg class="input-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M7.5 10h9M7.5 13.5h5.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              <input
+                id="meetingId"
+                name="id"
+                type="text"
+                inputmode="numeric"
+                autocomplete="off"
+                maxlength="15"
+                pattern="[0-9]{9,11}"
+                placeholder="123 456 7890"
+                aria-describedby="meetingIdHelp meetingIdError"
+                required>
+            </div>
+            <p class="field-help" id="meetingIdHelp">9–11 digits. Spaces and dashes are removed automatically.</p>
+            <p class="field-error" id="meetingIdError" role="alert" hidden>Enter a valid 9–11 digit meeting ID.</p>
+          </div>
+
+          <div class="field">
+            <label for="displayName">Your name <span class="optional">Optional</span></label>
+            <div class="input-wrap">
+              <svg class="input-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.2" r="3.4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M5.2 19.2a6.8 6.8 0 0 1 13.6 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              <input
+                id="displayName"
+                name="name"
+                type="text"
+                autocomplete="name"
+                maxlength="60"
+                placeholder="Guest">
+            </div>
+            <p class="field-help">Shown to the host when you join.</p>
+          </div>
+
+          <fieldset class="join-options">
+            <legend>Join options</legend>
+            <div class="option-grid">
+              <label class="option">
+                <input type="checkbox" id="audioOff" name="audio" value="off">
+                Don’t connect to audio
+              </label>
+              <label class="option">
+                <input type="checkbox" id="videoOff" name="video" value="off">
+                Turn off my video
+              </label>
+            </div>
+          </fieldset>
+
+          <button class="join-submit" type="submit">
+            <span class="submit-label">Join</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+
+        <div class="join-notice">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 10.5V16M12 7.6v.1" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+          <p>
+            <strong>Internal tool.</strong> <br> Need the desktop app?
+            <a href="zoom logo.png" download target="_blank" rel="noopener noreferrer">Download it from zoom.us</a>.
+          </p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="page-footer">
+    <div class="page-footer-inner">
+      <p>© 2026 Meeting Access · Internal use only</p>
+      <!-- <p>Not affiliated with Zoom Communications, Inc. Zoom is a trademark of Zoom Communications, Inc.</p> -->
+    </div>
+  </footer>
+
+  <script src="join.js" defer></script>
+</body>
+</html>

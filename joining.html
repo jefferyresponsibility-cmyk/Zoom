@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Internal meeting access portal. Connecting you to your meeting.">
+  <meta name="theme-color" content="#f5f7fc">
+  <title>Joining Meeting — Meeting Access</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="meeting.css">
+</head>
+<body class="page-joining">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="masthead">
+    <div class="masthead-inner">
+      <a class="ma-brand" href="index.html" aria-label="Zoom — internal meeting access home">
+        <img class="ma-logo" src="zoom logo.png" alt="Zoom">
+        <span class="ma-brand-badge">Internal</span>
+      </a>
+
+      <nav class="masthead-nav" aria-label="Secondary">
+        <a href="index.html">Back to site</a>
+        <a class="masthead-cta" href="zoom logo.png" download target="_blank" rel="noopener noreferrer">
+          Get Zoom
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="joining-main">
+    <div class="joining-shell">
+      <section class="joining-card" id="joiningCard" aria-labelledby="joiningTitle">
+        <div class="joining-state" id="joiningState">
+          <span class="step-pill">Step 2 of 2</span>
+
+          <div class="spinner-wrap" aria-hidden="true">
+            <span class="spinner-ring"></span>
+            <span class="spinner-core">
+              <svg viewBox="0 0 24 24"><path d="M4.8 7.5A2.5 2.5 0 0 1 7.3 5h6.4a2.5 2.5 0 0 1 2.5 2.5v9a2.5 2.5 0 0 1-2.5 2.5H7.3a2.5 2.5 0 0 1-2.5-2.5v-9Z" fill="currentColor"/><path d="m16.8 10.2 3.2-1.8c.5-.3 1.1.1 1.1.7v5.8c0 .6-.6 1-1.1.7l-3.2-1.8v-3.6Z" fill="currentColor"/></svg>
+            </span>
+          </div>
+
+          <h1 id="joiningTitle">Joining Meeting</h1>
+          <p class="joining-meta">
+            Meeting <span class="meeting-chip" id="meetingIdOut">—</span>
+            <span class="meta-sep" aria-hidden="true">·</span>
+            <span id="displayNameOut">Guest</span>
+          </p>
+
+          <div class="joining-bar" aria-hidden="true"><span></span></div>
+          <p class="joining-hint" role="status">Connecting securely to your meeting…</p>
+        </div>
+
+        <div class="update-state" id="updateState" hidden>
+          <span class="update-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3.5v11M7.5 10 12 14.5 16.5 10M4.5 20.5h15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="step-pill step-pill-warn">Update required</span>
+          <h2 id="updateTitle" tabindex="-1">Your Zoom Client is Out of Date</h2>
+          <p class="update-copy">
+            This device needs an up-to-date Zoom desktop app before it can join this meeting.
+            Download the latest version, then come back and join again.
+          </p>
+
+          <p class="update-meeting">
+            <span>Meeting</span>
+            <span class="meeting-chip" id="updateMeetingId">—</span>
+          </p>
+
+          <div class="update-actions">
+            <a class="cta cta-primary" href="zoom logo.png" download target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Download Zoom
+            </a>
+            <!-- Internal installer: drop your file at this path, or change the href below. -->
+            <a class="cta cta-secondary" href="zoom logo.png" download>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v11a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 17.5v-11Z" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="m9 9 3 3-3 3M13.5 15H16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Internal installer (IT only)
+            </a>
+          </div>
+
+          <p class="update-note">
+            Only run the internal installer if your IT team provided it to you.
+            Otherwise use the official download above.
+          </p>
+
+          <a class="back-link" href="join.html">Join a different meeting</a>
+        </div>
+
+        <div class="error-state" id="errorState" hidden>
+          <span class="error-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 8v5M12 16.4v.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M10.3 4.6 3.6 17a2 2 0 0 0 1.8 2.9h13.2a2 2 0 0 0 1.8-2.9L13.7 4.6a2 2 0 0 0-3.4 0Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+          </span>
+          <h2 id="errorTitle" tabindex="-1">Meeting ID required</h2>
+          <p class="update-copy">
+            We couldn’t find a valid meeting ID in this link. Go back and enter a 9–11 digit ID to continue.
+          </p>
+          <div class="update-actions">
+            <a class="cta cta-primary" href="join.html">Back to join</a>
+          </div>
+        </div>
+      </section>
+
+      <p class="joining-footnote">
+        <!-- This is an internal meeting access page and is not affiliated with Zoom. -->
+        <a href="zoom logo.png" target="_blank" rel="noopener noreferrer">Get the official Zoom app</a>.
+      </p>
+    </div>
+  </main>
+
+  <footer class="page-footer">
+    <div class="page-footer-inner">
+      <p>© 2026 Meeting Access · Internal use only</p>
+      <!-- <p>Not affiliated with Zoom Communications, Inc. Zoom is a trademark of Zoom Communications, Inc.</p> -->
+    </div>
+  </footer>
+
+  <script src="joining.js" defer></script>
+</body>
+</html>

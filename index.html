@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#ffffff">
+  <title>Redirecting — Zoom</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dialog-open">
+
+  <svg class="icon-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-zoom" viewBox="0 0 40 40">
+      <rect width="40" height="40" rx="11" fill="currentColor"/>
+      <path fill="#fff" d="M9.5 15.2a3.2 3.2 0 0 1 3.2-3.2h9.6a3.2 3.2 0 0 1 3.2 3.2v9.6a3.2 3.2 0 0 1-3.2 3.2h-9.6a3.2 3.2 0 0 1-3.2-3.2v-9.6Z"/>
+      <path fill="#fff" d="m26.5 18.1 4.7-2.7c.8-.5 1.8.1 1.8 1v7.2c0 .9-1 1.5-1.8 1l-4.7-2.7v-3.8Z"/>
+    </symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24">
+      <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      <path d="M3.8 12h16.4M12 3.5c2.2 2.3 3.4 5.3 3.4 8.5S14.2 18.2 12 20.5C9.8 18.2 8.6 15.2 8.6 12S9.8 5.8 12 3.5Z" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    </symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24">
+      <rect x="5" y="10" width="14" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      <path d="M8.5 10V7.5a3.5 3.5 0 1 1 7 0V10M12 14v2.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </symbol>
+  </svg>
+
+  <dialog class="redirect-dialog" id="redirectDialog" closedby="none" aria-labelledby="redirectTitle" aria-describedby="redirectDescription">
+    <div class="dialog-card">
+      <div class="redirect-icon-wrap" aria-hidden="true">
+        <span class="redirect-ring"></span>
+        <span class="redirect-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><use href="#i-zoom"></use></svg>
+        </span>
+      </div>
+
+      <span class="dialog-kicker">
+        <span class="status-dot"></span>
+        Internal redirect
+      </span>
+
+      <h2 id="redirectTitle">Redirecting you to join a meeting…</h2>
+      <p class="dialog-copy" id="redirectDescription">
+        Hang tight. We’re taking you to the internal Meeting Access page to enter your meeting ID.
+      </p>
+
+      <div class="destination">
+        <span class="destination-icon">
+          <svg class="icon icon-16" aria-hidden="true"><use href="#i-globe"></use></svg>
+        </span>
+        <div>
+          <span>Destination</span>
+          <strong>Meeting Access</strong>
+        </div>
+        <span class="destination-tag">Internal</span>
+      </div>
+
+      <div class="progress-track">
+        <progress class="progress-fill" id="redirectProgress" max="100" value="0" aria-label="Redirect progress">0%</progress>
+      </div>
+
+      <div class="redirect-meta">
+        <span>Opening in <strong><span id="redirectCountdown">10</span>s</strong></span>
+      </div>
+
+      <a class="btn btn-primary dialog-cta" id="openNow" href="join.html">
+        Continue to join
+        <svg class="icon icon-16" aria-hidden="true"><use href="#i-arrow"></use></svg>
+      </a>
+
+      <span class="redirect-footnote">
+        <svg class="icon icon-12" aria-hidden="true"><use href="#i-lock"></use></svg>
+        Taking you to the internal meeting portal in this tab
+      </span>
+    </div>
+  </dialog>
+
+  <noscript>
+    <p class="redirect-noscript"><a href="join.html">Continue to join a meeting</a></p>
+  </noscript>
+
+  <script>
+    (() => {
+      const dialog = document.getElementById("redirectDialog");
+      if (dialog && typeof dialog.showModal === "function" && !dialog.open) {
+        dialog.showModal();
+      }
+    })();
+  </script>
+  <script src="script.js" defer></script>
+</body>
+</html>
